@@ -50,11 +50,16 @@ const Main = () => {
               placeholder="Phone Number"
             />
             <hr className="w-2/3 max-w-2xl md:text-red-700 mx-auto mb-4 mt-4" />
-            <label htmlFor="firstName">Last Name</label>
-              <input
-              className="md:w-[400px] mb-4 w-60 ml-3 p-2 rounded-md"
-              type="text"
-              placeholder="Employee ID"
+            <label htmlFor="firstName">Date for the commencement of leave</label> <br />
+            <input
+              className="md:w-[400px] mt-2 w-60 ml-3 p-2 rounded-md"
+              type="number"
+              placeholder="Phone Number"
+            />
+            <hr className="w-2/3 max-w-2xl md:text-red-700 mx-auto mb-4 mt-4" />
+            <label htmlFor="Purpose">Purpose for leave</label> <br />
+              <textarea className="rounded-md md:ml-8 mx-4 my-3 w-80" cols={60} rows={5} name="value"
+              placeholder="Purpose for leave..."
             />
           </div>
         </main>

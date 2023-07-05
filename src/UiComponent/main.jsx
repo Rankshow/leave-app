@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "./footer";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Main = () => {
+  // toastify notification
+  const submitted = () => toast.success("Successfully submitted🎉 ! !")
+  // state of every input
+  const [firstName, setFirstName] = useState("");
+  const [employeeId, setEmployeeId] = useState("");
+  const [email, setEmail] = useState("");
+
+
   return (
     <>
       <div className="font-medium">
@@ -25,7 +35,7 @@ const Main = () => {
             <label htmlFor="EnployeeId">Employee ID</label>
             <input
               className="md:w-[400px] w-60 ml-3 p-2 rounded-md"
-              type="number"
+              type="text"
               placeholder="Employee ID"
             />
             <hr className="w-2/3 max-w-2xl md:text-red-700 mx-auto mb-4 mt-4" />
@@ -58,11 +68,12 @@ const Main = () => {
             />
             <hr className="w-2/3 max-w-2xl md:text-red-700 mx-auto mb-4 mt-4" />
             <label htmlFor="Purpose">Purpose for leave</label> <br />
-              <textarea className="rounded-md md:ml-[6em] s: pl-2 mx-4 my-3 w-80" cols={60} rows={5} name="value"
+              <textarea className="rounded-md md:ml-[6em] pt-1 pl-2 mx-4 my-3 w-80" cols={60} rows={5} name="value"
               placeholder="Purpose for leave..."
             />
           </div>
-          <button className="bg-red-600 py-2 px-2 mx-[7em] text-white rounded-md hover:opacity-[.7]">Submit Request</button>
+          <button onClick={submitted} type="submit" className="bg-red-600 py-2 px-2 mx-[7em] text-white rounded-md hover:opacity-[.7]">Submit Request</button>
+          <ToastContainer />
         </main>
       </div>
       <Footer />
